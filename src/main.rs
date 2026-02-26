@@ -184,7 +184,7 @@ fn encode_video(
 ) -> std::result::Result<String, Box<dyn std::error::Error>> {
     let temp_dir = tempfile::tempdir()?;
     let temp_path = temp_dir.keep();
-    let output_path = temp_path.join("reconstructed_video.mp4");
+    let output_path = temp_path.join("camera_controls_testing.mp4");
     let output_path_str = output_path.to_string_lossy().to_string();
 
     let mut output = ffmpeg_next::format::output(&output_path)?;

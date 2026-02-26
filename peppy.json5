@@ -15,10 +15,6 @@
       "--release"
     ]
   },
-  parameters: {
-    // How long do you want the reconstruction to be?
-    video_duration_seconds: "u32"
-  },
   interfaces: {
     subscribes_to: {
       topics: [
