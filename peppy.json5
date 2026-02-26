@@ -1,0 +1,72 @@
+{
+  schema_version: 1,
+  manifest: {
+    name: "testing_uvc_camera_controls",
+    tag: "0.1.0",
+    language: "rust",
+    add_cmd: [
+      "cargo",
+      "build",
+      "--release"
+    ],
+    start_cmd: [
+      "cargo",
+      "run",
+      "--release"
+    ]
+  },
+  parameters: {
+    // How long do you want the reconstruction to be?
+    video_duration_seconds: "u32"
+  },
+  interfaces: {
+    subscribes_to: {
+      topics: [
+        {
+          id: "video_stream",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "video_stream"
+        },
+      ],
+      services: [
+        {
+          id: "video_stream_info",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "video_stream_info"
+        },
+        {
+          id: "set_exposure",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "set_exposure"
+        },
+        {
+          id: "set_white_balance",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "set_white_balance"
+        },
+        {
+          id: "set_gain",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "set_gain"
+        },
+        {
+          id: "set_brightness",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "set_brightness"
+        },
+        {
+          id: "set_contrast",
+          node: "uvc_camera",
+          tag: "0.1.0",
+          name: "set_contrast"
+        },
+      ]
+    },
+  }
+}
